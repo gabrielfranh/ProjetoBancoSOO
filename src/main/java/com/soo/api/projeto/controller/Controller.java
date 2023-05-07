@@ -39,6 +39,13 @@ public class Controller {
 		return usuarioService.getUsuarios();
 	}
 
+
+	// Retorna usuario por nomeUsuario
+	@RequestMapping(value = "/usuarios/login/{nomeUsuario}", method = RequestMethod.GET)
+	public Usuario getUsuarioByNomeUsuario(@PathVariable(value = "nomeUsuario") String nomeUsuario) {
+		return usuarioService.getUsuarioByNomeUsuario(nomeUsuario);
+	}
+
 	// Retorna usuario por id usuario
 	@RequestMapping(value = "/usuarios/{usuarioId}", method = RequestMethod.GET)
 	public Usuario getUsuarioById(@PathVariable(value = "usuarioId") Long id) {

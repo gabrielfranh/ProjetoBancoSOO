@@ -45,6 +45,11 @@ public class UsuarioService {
 	public List<Usuario> getUsuarios() {
 	    return usuarioRepository.findAll();
 	}
+	
+	// READ
+		public Usuario getUsuarioByNomeUsuario(String nomeUsuario) {
+		    return usuarioRepository.findByNomeUsuario(nomeUsuario);
+		}
 
 	// DELETE
 	public void deleteUsuario(Long usuarioId) {
