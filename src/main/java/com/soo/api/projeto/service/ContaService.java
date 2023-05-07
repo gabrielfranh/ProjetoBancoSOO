@@ -74,6 +74,8 @@ public class ContaService {
 			return null;
 		
 		contaOld.setDataCriacao(conta.getDataCriacao());
+		contaOld.setNomeConta(conta.getNomeConta());
+		contaOld.setTipoConta(conta.getTipoConta());
 		contaOld.setSaldo(conta.getSaldo());
 	        
         return contaRepository.save(contaOld);                                

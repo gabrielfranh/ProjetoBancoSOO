@@ -24,6 +24,29 @@ public class Conta {
     
     @Column(name="id_usuario")
     private Long idUsuario;
+    
+    @Column(name="nome_conta")
+    private String nomeConta;
+    
+    @Column(name="tipo_conta")
+    private String tipoConta;
+
+
+	public String getNomeConta() {
+		return nomeConta;
+	}
+
+	public void setNomeConta(String nomeConta) {
+		this.nomeConta = nomeConta;
+	}
+
+	public String getTipoConta() {
+		return tipoConta;
+	}
+
+	public void setTipoConta(String tipoConta) {
+		this.tipoConta = tipoConta;
+	}
 
 	public Long getId() {
 		return id;
