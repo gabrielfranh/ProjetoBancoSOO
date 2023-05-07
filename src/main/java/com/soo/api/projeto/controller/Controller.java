@@ -53,12 +53,6 @@ public class Controller {
 	public Usuario getUsuarioById(@PathVariable(value = "usuarioId") Long id) {
 		return usuarioService.getUsuarioById(id);
 	}
-	
-	// Retorna usuario por id usuario
-	@RequestMapping(value = "/usuarios/{usuarioId}", method = RequestMethod.GET)
-	public Usuario getUsuarioByUser(@PathVariable(value = "usuarioId") Long id) {
-		return usuarioService.getUsuarioById(id);
-	}
 
 	// Altera usuario
 	 @RequestMapping(value="/usuarios/{usuarioId}", method=RequestMethod.PUT)
