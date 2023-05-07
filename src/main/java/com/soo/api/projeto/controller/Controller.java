@@ -3,6 +3,7 @@ package com.soo.api.projeto.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.soo.api.projeto.model.*;
 import com.soo.api.projeto.service.*;
 
+@CrossOrigin(origins = "http://127.0.0.1:8081")
 @RestController
 @RequestMapping("/api")
 public class Controller {
@@ -42,6 +44,12 @@ public class Controller {
 	// Retorna usuario por id usuario
 	@RequestMapping(value = "/usuarios/{usuarioId}", method = RequestMethod.GET)
 	public Usuario getUsuarioById(@PathVariable(value = "usuarioId") Long id) {
+		return usuarioService.getUsuarioById(id);
+	}
+	
+	// Retorna usuario por id usuario
+	@RequestMapping(value = "/usuarios/{usuarioId}", method = RequestMethod.GET)
+	public Usuario getUsuarioByUser(@PathVariable(value = "usuarioId") Long id) {
 		return usuarioService.getUsuarioById(id);
 	}
 
