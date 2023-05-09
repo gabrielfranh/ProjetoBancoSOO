@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<title>Login - Gerenciador de Conta</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+			<script src="/script.js" defer></script>
+
+		</head>
+		<body>
+			<div class="login-wrapper">
+				<div class="fields">
+					<div class="login-field-wrapper">
+						<label class="login-user-label" for="login-user">Usuário</label>
+						<input type="text" id="login-user" placeholder="ID de Usuário" name="user"/>
+					</div>
+					<div class="login-field-wrapper">
+						<label class="login-user-label" for="login-password">Senha</label>
+						<input type="password" id="login-password" title="senha" />
+					</div>
+				</div>
+				<button id="login-button" class="login-button" type="button"> 
+					<span class="login-button-text "> Login </span>
+					<img class="login-button-img" height="22" style="display: none;" src="/loading-buffering.gif" />
+				</button>
+				<div class="login-helpers">
+					<p><a class="login-signup" href="#modal-signup" rel="modal:open">Não possui uma conta? Cadastre-se</a></p>
+				</div>
+			</div>
+
+			<div id="modal-signup" class="modal">
+				<h2 class="modal-title">Cadastro</h2>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="signup-name">Nome Completo</label>
+					<input class="system-input" type="text" id="signup-name" title="name" />
+				</div>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="signup-documento">Documento</label>
+					<input class="system-input" type="text" id="signup-document" title="document" />
+				</div>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="signup-user">Usuário</label>
+					<input class="system-input" type="text" id="signup-user" title="user" />
+				</div>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="signup-password">Senha (4 digítos)</label>
+					<input class="system-input" type="password" maxlength="4" id="signup-password" title="senha" />
+				</div>
+				<p id="button-signup" class="login-button" style="margin-bottom: 0;"><a class="login-signup login-button-text" href="#modal-signup-finish" rel="modal:open">Cadastre-se</a></p>
+			</div>
+
+			<div id="modal-signup-finish" class="modal modalEfetuado">
+				<h2 class="modal-title" style="margin: 0">Cadastro efetuado!</h2>
+			</div>
+		</body>
+
+</html>

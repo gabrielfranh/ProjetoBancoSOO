@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<title>Gerenciador de Conta</title>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<link rel="stylesheet" href="style.css">
+			<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+			<script src="/scriptConta.js" defer></script>
+
+		</head>
+		<body>
+			<div class="login-wrapper">
+				<div class="fields">
+					<div class="login-field-wrapper">
+						<label id="login-user-label" class="login-user-label">Olá</label>
+					</div>
+					<div class="login-field-wrapper">
+						<label id="login-banco-label" class="login-user-label" >Banco: {nomeBanco}</label>
+					</div>
+					<div class="login-field-wrapper">
+						<label id="login-tipo-label" class="login-user-label">Tipo: {tipo}</label>
+					</div>
+					<div class="login-field-wrapper">
+						<label id="login-saldo-label" class="login-user-label" >Saldo: {saldo}</label>
+					</div>
+				</div>
+                <div class="actions-buttons">
+                    <button id="button-transfer" class="login-button" type="button"> 
+                        <a href="#modal-transfer-account" rel="modal:open"><span class="login-button-text ">Transferência</span></a>
+                    </button>
+                    <button id="button-historio-transfer" class="login-button" type="button"> 
+                        <a href="#modal-historico-transfer" rel="modal:open"><span class="login-button-text ">Histórico</span></a>
+                    </button>
+                    <button class="login-button" type="button"> 
+                    	<a  href="#modal-new-account" rel="modal:open"> <span class="login-button-text ">Nova Conta</span></a>
+                    </button>
+                    <button id="button-change-account" class="login-button" type="button"> 
+                        <a  href="#modal-change-account" rel="modal:open"><span class="login-button-text">Trocar Conta</span></a>
+                    </button>
+                </div>
+			</div>
+
+			<div id="modal-new-account" class="modal">
+				<h2 class="modal-title">Cadastro Conta</h2>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="bank-name">Banco</label>
+					<input class="system-input" type="text" id="bank-name" title="name" />
+				</div>
+				<label class="login-user-label" for="tipo-conta">Tipo de Conta:</label>
+				<select class="system-input" name="tipo-conta" id="tipo-conta" style="display: flex">
+					<option value="corrente">Conta Corrente</option>
+					<option value="poupanca">Conta Poupança</option>
+				</select>
+				<a id="button-create-account" class="login-button login-signup login-button-text " style="display: block; margin-bottom: 0;"  href="#close-modal" rel="modal:close">Cadastre-se</a>
+			</div>
+			<div id="modal-change-account" class="modal">
+				<h2 class="modal-title">Contas</h2>
+				<div class="list-contas"></div>
+			</div>
+
+			<div id="modal-transfer-account" class="modal">
+				<h2 class="modal-title">Transferir da Conta</h2>
+				<div class="login-field-wrapper">
+					<label class="transfer-bank-label login-user-label">Banco</label>
+				</div>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="tipo-conta">Tipo de Transferência:</label>
+					<select class="system-input" name="tipo-transferencia" id="tipo-transferencia" style="display: flex">
+						<option value="" hidden></option>
+						<option value="Saque">Saque</option>
+						<option value="Depósito">Depósito</option>
+					</select>
+				</div>
+				<div class="login-field-wrapper">
+					<label class="login-user-label" for="signup-password">Valor</label>
+					<input class="system-input" type="number" id="transfer-valor" title="senha" />
+				</div>
+				<a id="button-transfer-finish" class="login-button login-signup login-button-text " style="display: block;margin-bottom: 0;"  href="#modal-feedback-transfer" rel="modal:open">Transferir</a>
+			</div>
+			<div id="modal-feedback-transfer" class="modal">
+				<h2 id="transfer-feeback" class="modal-title">Transferência Concluida</h2>
+			</div>
+
+
+			<div id="modal-historico-transfer" class="modal">
+				<div id="list-transfer" class=""></div>
+			</div>
+		</body>
+
+</html>
